@@ -4,7 +4,7 @@
 # Specify all minority/comparison groups, Majority/reference group will be specified later
 races <- c("Black","Asian","NH.PI","AI.AN","TwoorMore")
 # Specify names of columns that contain scores to be summarized
-scores <- c('PILOTRF', 'CSORF', 'ABMRF', 'VERBRF', 'QUANRF', 'ACADRF')
+scores <- c('ScorVar1', 'ScorVar2', 'ScorVar3', 'ScorVar4')
 
 
 # Function
@@ -39,7 +39,7 @@ cohensD <- function(data,group_var,groups,scores,ref_group){
 # Run the function
 # Data assumes a wide format where all demographic variables are string labels in the same column
 # Scores are expected to be in several columns
-cohensD(form1,'race_group',races,scores,"White")
+cohensD(data,'race_group',races,scores,"White")
 
 
 
@@ -75,6 +75,6 @@ cohensD <- function(data,group_var,groups,scores,ref_group){
 
 # races <- c("Black")
 sex <- c("F")
-scores <- c('PILOTRF', 'CSORF', 'ABMRF', 'VERBRF', 'QUANRF', 'ACADRF')
+scores <- c('ScorVar1', 'ScorVar2', 'ScorVar3', 'ScorVar4')
 
-cohensD(form1,'SEXA',sex,scores,"M")
+cohensD(data,'SEXA',sex,scores,"M")
